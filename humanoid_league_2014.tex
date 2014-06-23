@@ -1,0 +1,455 @@
+\documentclass{llncs}
+%
+\usepackage{makeidx}  % allows for indexgeneration
+%
+\begin{document}
+
+\mainmatter
+
+\title{Rule Developments in the Humanoid League from 2002 to 2014 and Perspectives for the Future}
+
+\titlerunning{Humanoid League Perspective}
+
+\author{Jacky Baltes\inst{1}}
+
+\institute{University of Manitoba, Winnipeg, MB, R3T 2N2, Canada,\\
+email{\ jacky@cs.umanitoba.ca},\\
+WWW home page: \texttt{http://www.cs.umanitoba.ca/\~{ }jacky}
+}
+
+\maketitle
+
+\begin{abstract}
+This paper describes the major achievements in the history of the
+RoboCup humanoid league from its start in 2002 to 2014. It provides a
+perspective for the future of the league with a strong push towards
+larger robots and human like playing fields.
+
+The paper also describes some risks associated with these intended
+changes.
+\end{abstract}
+
+
+\section{Introduction}
+
+RoboCup is an international robotics competition for
+robots with the stated goal of beating the human world champion in
+soccer in 2050. As such, many of the competitions focus on soccer as a
+challenge problem for artificial intelligence and robotics. However,
+RoboCup also includes competitions for home helper, work helper, and
+rescue robots.
+
+This paper describes the history and future perspective of the RoboCup
+Humanoid League. The history of the RoboCup humanoid league can be
+broken up into several periods. The early years where simple walking
+and kicking were formidable challenges are introduced in
+section~\ref{sec:one}. As described in Sec.~\ref{sec:two}, rapid
+improvements in mechanics, electronics, and algorithms resulted in
+much more capable human like robots that were able to walk quickly and
+robustly over the field by the end of 2007. The third period of
+humanoid robot development shown in Sec.~\ref{sec:three} resulted in
+smarter playing robots where winning and loosing was more determined
+by a robot's capability to localize itself and map its environment
+than by its walking speed. Section~\ref{sec:threeb} describes how
+commercially available platforms provided teams with an opportunity to
+speed up their development and the impact of those commercial
+platforms on the competition.  Section~\ref{sec:four} gives an
+introduction to the major changes for the RoboCup 2014 competition in
+Joe Passeo, Brazil. The future evolution of the RoboCup Humanoid
+League is characterized by a strong push towards larger robots, bigger
+teams, and more human like soccer rules and environments as shown in
+Sec.~\ref{sec:five}. Some concerns and issues with the current road
+map are discussed in Sec.~\ref{sec:seven}. The paper draws conclusions
+in Sec.~\ref{sec:six}.
+
+\section{The Early Years (2002 - 2004)}
+\label{sec:one}
+
+The humanoid league is one of the youngest soccer playing leagues in
+the RoboCup competition. It's inaugural event took place at RoboCup
+2002 in Fukuoka, Japan.
+
+Building a fully autonomous humanoid robot that is able to play soccer
+games is still a challenging problem today, but it was clearly a blue
+sky -- extremely ambitious with a high chance of failure -- project in
+2002. 
+
+At that time, there were some commercially developed humanoid robots
+during that period (Honda Asimo and Sony Qrio). However, the costs of
+these robots was way beyond the funding levels of the average RoboCup
+participants. I remember that in 2003, a representative from Sony
+introduced the Sony Qrio - the successor to the widely successful Sony
+Aibo robot. In his speech, he was asked about the cost of the Qrio and
+stated that the cost would be about that of a car. Many researches
+were extremely excited, since the cost seemed very reasonable for such
+an advanced platform. When many members of the audience said that they
+would like to order one immediately, the Sony representative corrected
+himself by saying: "No. You don't understand. I mean a Ferrari".
+
+In spite of the very ambitious goal, a hodge-podge of about a dozen
+teams entered the inaugural RoboCup humanoid league competition in
+2002 in Fukuoka, Japan. The robot designs varied from 20cm to 180cm
+tall robots. There were also many other differences between the robot
+designs. Another platform that was commercially available during that
+time was the Fuji HOAP series of robots. Their cost was
+about \$150,000 USD, but it was not able to act fully autonomously
+because it did not have sufficient processing power available
+on-board. So all vision processing etc. had to be done off-board on a
+PC. Another difference was that several other teams were unable to
+move autonomously under battery power and had to be powered
+externally. Some teams even were completely unable to act autonomously
+and used remote control to move the robot towards the ball.
+
+Due to these constraints, the first RoboCup Humanoid League consisted
+of three events: balancing on one leg, free style demonstration (a
+panel of judges scores a short free style demonstration by the team),
+and penalty kicks. To allow these robots with very different
+capabilities to compete in the same event, the RoboCup Humanoid League
+TC introduced performance factors to try and level the playing
+field. For example, the performance factor for remote controlled
+operation was 100\%, so a goal scored with remote controlled robot
+counted 50\% of a goal scored by a fully autonomous robot.
+
+Apart from team Joitech that used the Fujitsu HOAP, all competitors
+developed their own hardware for the RoboCup Humanoid League and
+similar competitions (e.g., Japan Robo-One fighting robots). Since the
+RoboCup Humanoid League TC realized that building your own robot was a
+significant challenge at that time and since it wanted to encourage
+teams to explore design ideas and build their own robots, commercial
+platforms were also penalized by a 20\% performance factor.
+
+The RoboCup Humanoid League TC was acutely aware of the fact that
+building larger humanoid robots was even harder than building smaller
+humanoid robots, but that to achieve the goal of 2050 large humanoid
+robots are of strategical importance. Therefore, the RoboCup Humanoid
+League TC separated the league into three subleagues: small (<60cm),
+medium (60cm to 80cm) and large (>80cm) robots.
+
+The constraints of these early years still influences the culture of
+the humanoid league and influenced rule development in successive
+years.
+
+\section{Human Like Robots (2004 - 2008)}
+\label{sec:two}
+
+The performance of the humanoid robots in the humanoid league
+developed quickly. By 2004, all robots acted fully autonomously and
+all processing was handled on-board. Therefore, the need for the
+performance factors vanished and they were removed from the rule
+book. The rules evolved to provide fair and entertaining competitions
+that could still act as benchmark problems for our research into
+developing capable fully autonomous soccer robots.
+
+As teams improved the robustness and walking ability of their robots,
+it became possible to start 2 vs 2 soccer matches. The first humanoid
+robot soccer matches took place as demonstrations events during
+RoboCup 2003 in Padua, Italy, and RoboCup 2004 in Lisbon, Portugal, were
+introduced as regular events in 2005.
+
+The RoboCup Humanoid League TC also realized that it was important to
+encourage teams to work on fundamental problems even if they were not
+directly applicable to the current game play. An example are
+throw-ins. In the soccer matches, throw-ins are replaced by the
+referee putting the ball back into play in a neutral position without
+stopping the match, since a throw-in is an often occurring event that
+is a time consuming task for a humanoid robot. So, the RoboCup
+Humanoid League TC decided for the faster solution (placement by the
+referee) which results in more entertaining and dynamic
+games. However, throw-ins will be important on our way towards 2050
+and therefore the RoboCup Humanoid League TC introduced the throw-in
+technical challenge so that teams can show their progress and be
+rewarded by points in the technical challenge. The points in the
+technical challenge do not affect the result for the soccer
+competition, but are counted towards the Best Humanoid award. The
+technical challenges change regularly. Other technical challenges were
+uneven terrain walking, doubles passes, high kicking, and dribbling
+challenges.
+
+Many teams greatly improved the performance of their robots, but Team
+VStone from Osaka, Japan, set a new bar for all competitors with their
+platform. The robots were able to move quickly and stably across the
+playing field. Furthermore, the robots used a small omni-vision system
+in the head of the robot, which allowed the robots a 360\o{ } degree
+view of the playing field. The VStone robots were extremely successful
+in the soccer competitions and won the soccer competitions three times
+in succession.
+
+During this time, many formal and informal discussions were held among
+the technical committee and the participants. After several years, it
+became apparent that most participants felt that humanoid robots
+should be limited to human like kinematics and human like sensors. As
+a result of these discussions, the use of omni-vision and extreme wide
+angle lenses was disallowed. Furthermore, active sensors (e.g., LADAR,
+Kinect, RGBD) were also forbidden.
+
+Due to some controversial judging results in the past, another
+decision based on discussions with the teams was to remove subjective
+judgment from the competition as much as possible. Quantitative
+measures (e.g., goal scored) were seen as much more desirable by the
+teams. Therefore, the free demonstration event was removed from the
+competition.
+
+Another effect of these changes meant that vision became the most
+dominant sensor for perceiving the environment. As computer vision is
+crucially dependent on the lighting conditions of the field, the rules
+evolved towards more realistic vision. In 2010 extra lighting on the
+field was removed, which resulted in much larger changes in brightness
+due to spot lights and shadows.
+
+During the same time frame, the performance of the larger robots also
+improved significantly. Partially driven by the availability of
+affordable high powered servos, the performance of the smaller adult
+sized robots (80cm to 100cm and less than 10kg) had improved to the
+point where 2 vs 2 soccer matches became possible. There was a strong
+push from those team to introduce soccer into the adult sized
+league. But, some of the larger (100cm to 130cm) and heavier robots
+were still too fragile and unstable. Furthermore, since some of the
+robots weighted more than 40kg, they posed a real danger to other
+robots or participants should they fall.
+
+It became apparent that there was a big difference in the technical
+challenge for light 90cm tall and heavy 120cm tall humanoid
+robots. Therefore, the Humanoid league TC and team leaders decided to
+split the Humanoid league competitions into three size classes: kid
+size robots less than 60cm tall, teen sized robots between 80cm and
+120cm tall, and adult sized robots greater than 120cm.
+ 
+\section{From Walking to Navigation (2008 - 2012)}
+\label{sec:three}
+
+In the 2008, the number of players in the soccer matches was increased
+from 2 to 3 players per team. Furthermore, most teams had successfully
+solved the problem of locomotion and were able to walk stably over
+flat even surfaces such as hardwood floors or carpets. For these two
+reasons, the localization (where is the robot?) and the mapping (where
+are the ball and the other players?) became more and more
+important. Whereas in previous years, a robust fast walking robot
+design was sufficient to ensure success, smarter game play became
+increasingly important. Two teams from Germany (Team Nimbro,
+University of Freiburg and Darmstadt Dribblers, University of
+Darmstadt) proved to be powerhouses during that period and won the
+competition several times.
+
+The next wave of major rule changes aimed at making localization and
+mapping more realistic (the mid and corner markers were removed, the
+size of the playing field extended, and detection of the goals was
+made more difficult. The goals changed first by removing the uni
+coloured back wall leaving only the goal posts as landmarks and by
+colouring both goals in yellow (2013).
+
+For the new adult sized league, the penalty kick was replaced by the
+dribble and kick competition. Dribble and Kick is played between two
+robots - a striker and the goal keeper. The striker robot starts in
+the centre of the field and the ball is placed randomly on the
+striker's goal box. The task of the striker is to move back to
+approach the ball, dribble the ball across the centre line and then
+kick the ball into the opposing goal.
+
+\section{The DARwIn and Nimbro-OP Platforms (2012 - now)}
+\label{sec:threeb}
+
+In 2011, the Korean company Robotis introduced the DARwIn-OP robot,
+which they had developed in conjunction with Prof. Dennis Hong from
+Virginia Tech. A year later, a similar collaboration between Robotis
+and Sven Behnke from Bonn University resulted in the development of
+Nimbro-OP, a teen sized humanoid robot. The introduction of this
+platforms had a big impact on the Humanoid League. Instead of
+designing and building their robots from scratch, teams could now
+simply purchase a robot platform, that was able to walk and kick a
+ball out of the box. So it made entry into the league much easier for
+new teams.
+
+Since the number of participating teams had increased drastically over
+the years, the number of participating teams in the kid size had to be
+limited to 24 teams and qualification for the RoboCup competition had
+become very competitive. For qualification, teams had to submit a team
+description paper (TDP) and a video of their robot playing soccer. In
+that video, the robot needed to demonstrate the ability to perceive
+and approach a ball, line up with the goal, and to kick the ball into
+the goal. It also needed to demonstrate the ability to stand up after
+a fall from various positions (i.e., falling forward and falling
+backwards). The DARwIn-OP had a large impact on the kid size
+league. In 2014, more than 33\% of the teams that tried to qualify
+used the DARwIn platform.
+
+Many teams that built their robots from scratch felt that it was
+unfair that in spite of the fact that they had spent much hard work,
+time, and money on building their own robots, other teams could just
+purchase a robot and qualify for the RoboCup competition with much
+less effort. Other teams felt that only the performance of the robot
+should be the determining factor in qualification. The RoboCup
+Humanoid League TC discussed the issue and decided on a
+compromise. The stated policy for qualification is that teams that
+purchase a robot had to clearly highlight what advancements and
+improvements they had made to the out of the box system for
+qualification.
+
+The introduction of the DARwIn-OP, however, also posed some problems
+in the rule development. The RoboCup Humanoid League TC had a long
+standing tradition of reducing the maximum allowed foot size of the
+robots every two years. This reduction was in the rule appendix. The
+implementation of that rule would have resulted that the DARwIn robots
+would not be eligible for the 2013 competition. The trustees were
+worried about possible repercussions from the Robotis company, who had
+made a special offer for RoboCup teams and overruled the majority of
+the RoboCup Humanoid League TC.
+
+\section{Brazil Ole Ola (2014)}
+\label{sec:four}
+
+At the end of the 2013 RoboCup competition, the trustees issued a
+challenge to all leagues as they felt that progress in the leagues had
+been limited to incremental improvements rather than radical
+breakthroughs.
+
+After discussions with the team leaders, one major change was an
+aggressive push towards larger robots. The 2014 competition introduced
+radical changes in the sizes of the kid, teen, and adult leagues. For
+example, the maximum height of the robots in the kid size was raised
+by 50\% to 90cm. Furthermore, the height limits of the kid and teen
+and the teen and adult sized leagues were chosen with some overlap on
+the upper and lower limits. This allows teams more easily to move to
+larger sub leagues, since they do not need to build a completely new
+robot. For example, a team could build an 85cm tall robot and compete
+in the kid size league in the first year and use the same robot in the
+teen size league the next year.
+
+The field dimensions, the size of the goals, and the size and weight
+of the ball were adjusted to accommodate the larger robots.
+
+Other changes try to enhance team play. The numbers of players for the
+soccer matches was increased to 4 players per team.  Also, a robot is
+not allowed to dribble the ball across the centre line, but the robot
+must pass it to a team mate.
+
+The complexities of the challenges also increased. The dribble and
+kick competition for adult sized robots will introduce two obstacles
+(representing opposing players) that must be avoided by the striker
+robot.
+
+\section{The Future of the Humanoid League (2014 - 2050)}
+\label{sec:five}
+
+The RoboCup Humanoid League continues its rapid advance towards
+smarter and more capable robots. The goal is to move quickly towards
+more realistic soccer matches. There are several extremely difficult
+problems that need to be overcome with respect to the environment, the
+players, and the matches.
+
+One future direction of the RoboCup Humanoid League is to move to more
+human like playing fields and environments. For example in 2015, the
+RoboCup Humanoid League TC plans to reduce the colours in the
+environment even further and to move towards requiring texture-based
+segmentation. The plan is to remove the yellow goal posts and to
+replace them with white goal posts with possibly black and white
+textures. Furthermore, the orange ball will be replaced by a real
+soccer ball, that is a ball that is mostly white or grey with some
+texture to it.
+
+Also, the playing surface will be changed from a carpeted floor to
+astro turf and eventually a real grass playing field. This means that
+active balancing and uneven terrain walking will become more important
+for the robots. As the number and speed of the robots increases,
+collisions between players are more likely to occur. Therefore, the
+RoboCup Humanoid League TC will introduce push recovery challenges
+where the robots the ability of the robots to compensate for pushes
+from various directions.
+
+In addition. corner flags similar to human soccer will be
+introduced. These changes combined will make the playing fields in the
+RoboCup Humanoid League scaled down versions of the human soccer
+playing fields.
+
+The progress in the teen sized league has shown that it is now
+possible to have soccer matches for 80cm to 120cm tall humanoid
+robots. But the ambitious goal of the RoboCup Humanoid League TC is to
+introduce rules that move towards robots capable of playing against
+human players. Therefore, the minimum height of the robots will be
+increased in stages from the current 40cm to 140cm. As the capability
+of the robots increases, the RoboCup Humanoid League will play with
+larger and larger robots that become more and more similar to human
+players in their kinematics.
+
+Lastly, the rules of the game have to be adjusted to match exactly the
+FIFA rules for human soccer. This requires that robots must be able to
+act fully autonomously during all aspects of the game (including
+kick-offs, substitutions, free kicks). Furthermore, the games will
+include throw-ins and direct and indirect free kicks. It is
+interesting to note that this rule progression towards more human like
+soccer is not always linear. For example, free kicks were included in
+the rules from 2004 to 2007, but slowed down the game
+significantly. Therefore, all free kicks were replaced by 30 second
+removal penalties similar to ice hockey rather than soccer. This made
+games much more entertaining and made the RoboCup Humanoid League the
+most exiting league in RoboCup. However, as teams improve the skills
+and capabilities of their robot, free kicks can be re-introduced while
+still resulting in exciting matches.
+
+The number of players will be increased in the following years. We
+plan on playing with 4 vs 4 players in 2015 and to eventually reach 11
+vs 11 players in 2050. The RoboCup Humanoid League TC realizes that
+few teams will be able to afford 11 players and has also started to
+build the necessary technical infrastructure as well as amendments to
+the rules to encourage joint or mixed teams.
+
+The other issue with the robots in the RoboCup Humanoid League are
+their robustness and energy efficiency. Currently the soccer games in
+the RoboCup Humanoid League last only 20 minutes. In the coming year,
+the duration of the games will be increased to match that of human
+soccer matches -- 90 minutes per game.
+
+\section{Risks and Issues}
+\label{sec:seven}
+
+This paper would be incomplete if it were not to include some words of
+warning for the future development of the league. The initiatives
+described in Sec.~\ref{sec:five} are far reaching and ambitious. As
+such, it is clear that they entail a certain amount of risk.
+
+The first issue is that moving to larger robots will greatly increase
+the costs associated with RoboCup participation for all teams. Larger
+robots require much more torque and thus much more expensive
+motors. Furthermore, large robots cannot be brought in check-in
+luggage and often must be shipped as cargo.
+
+Combined with the ever increasing registration fees of RoboCup, this
+may lead to teams deciding not to participate in RoboCup. For example,
+several of the teams that participated in the RoboCup Humanoid League
+for many years (e.g., Tamkung University, Damshui, Taiwan, NCKU,
+Tainan, Taiwan, and Fumanoids, Berlin, Germany) will not participate
+at RoboCup 2014 for financial reasons.
+
+For example, the number of participants in the teen sized and adult
+sized competition remained low with four to six teams each. The low
+number of participants was in spite of the best efforts of the RoboCup
+Humanoid League and the supportive attitude of the RoboCup Federation
+in general to promote large humanoid robots.
+
+Another problem is that the move to larger robots will make entry for
+new teams much harder; the current road map does not provide a path
+for new teams. One suggestion discussed by the RoboCup Humanoid League
+TC was to keep the current kid size league, but to limit participation
+in this league to two years. Another idea is to promote mentor teams
+where more experienced teams form joint teams with less experienced
+teams and provide them with technical support.
+
+\section{Conclusions}
+\label{sec:six}
+
+The paper describes the history of the RoboCup Humanoid League from
+its humble beginnings in 2002. It describes the historical evolution
+of its competitions and rules to provide the reader with an insight
+into the culture and traditions of the RoboCup Humanoid League. This
+will make it easier to understand the current state as well as future
+plans for the development of the RoboCup Humanoid League toward the
+2050 goal.
+
+The author would like to thank previous and existing members of the
+RoboCup Humanoid League community for their input during many years of
+rule discussions and development. In particular, I would like to thank
+the current members of the RoboCup Humanoid League TC and organizing
+committees (Sven Behnke, Reinhard Gerndt, Luis F. Lupian, Marcell
+Missura, Daniel Seifert, Soroush Sadeghnejad, and RoboCup trustee
+Oskar von Stryk)
+
+\end{document}
